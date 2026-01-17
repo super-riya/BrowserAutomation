@@ -1,1 +1,34 @@
+name: Playwright Automation
 
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/5 * * * *" # optional: every 6 hours
+
+jobs:
+  run-automation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: |
+          npm install
+          npx playwright install
+          npx playwright install-deps
+
+      - name: Run automation
+        run: node script.js
+
+      - name: Upload stats
+        uses: actions/upload-artifact@v4
+        with:
+          name: run-stats
+          path: stats.txt
