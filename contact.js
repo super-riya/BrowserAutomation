@@ -8,7 +8,7 @@ import {
 const MAX_RUNS = 143;
 
 const browser = await chromium.launch({
-  headless: false,
+  headless: true,
   slowMo: 50
 });
 
