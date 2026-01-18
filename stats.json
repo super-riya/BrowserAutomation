@@ -1,0 +1,14 @@
+{
+  "frontend": {
+    "success": 0,
+    "failed": 0
+  },
+  "sde": {
+    "success": 0,
+    "failed": 3
+  },
+  "uiux": {
+    "success": 0,
+    "failed": 0
+  }
+}
