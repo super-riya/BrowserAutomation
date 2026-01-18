@@ -35,12 +35,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+          git pull --rebase origin main
+
           git add stats.json
           git commit -m "Update cumulative stats" || echo "No changes to commit"
-          git push
 
-      # - name: Upload stats
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: stats
-      #     path: stats.json
+          git push
