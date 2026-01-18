@@ -70,6 +70,6 @@ for (let run = 1; run <= MAX_RUNS; run++) {
 console.log("FINAL STATS:");
 console.log(JSON.stringify(stats, null, 2));
 // write stats ONCE
-fs.writeFileSync("stats.json", JSON.stringify(stats, null, 2));
+// fs.writeFileSync("stats.json", JSON.stringify(stats, null, 2));
 
 await browser.close();
