@@ -42,6 +42,9 @@ for (let run = 1; run <= MAX_RUNS; run++) {
     await page.goto(URL, { waitUntil: "networkidle" });
 
     const phone = `9${Math.floor(100000000 + Math.random() * 900000000)}`;
+    
+    const timestampt = Date.now();
+    const email = timestampt + emails[Math.floor(Math.random() * emails.length)];
 
     await humanFill(
       page,
@@ -58,7 +61,7 @@ for (let run = 1; run <= MAX_RUNS; run++) {
     await humanFill(
       page,
       'input[placeholder="e.g., priya@example.com"]',
-      emails[Math.floor(Math.random() * emails.length)]
+      email
     );
 
     await humanFill(
