@@ -1,14 +1,14 @@
 {
   "frontend": {
-    "success": 48,
+    "success": 101,
     "failed": 0
   },
   "sde": {
-    "success": 47,
+    "success": 95,
     "failed": 0
   },
   "uiux": {
-    "success": 48,
+    "success": 90,
     "failed": 0
   }
 }
