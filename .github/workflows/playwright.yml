@@ -6,7 +6,7 @@ permissions:
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/5 * * * *" # optional: every 6 hours
+    - cron: "*/30 * * * *" # optional: every 6 hours
 
 jobs:
   run-automation:
@@ -27,8 +27,11 @@ jobs:
           npx playwright install
           npx playwright install-deps
 
-      - name: Run automation
+      - name: Run main
         run: node script.js
+
+      - name: Run contact
+        run: node contact.js
 
       - name: Commit updated stats
         run: |
