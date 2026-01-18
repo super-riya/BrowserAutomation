@@ -4,7 +4,7 @@ import { firstNames, lastNames, emails, options, URLs } from "./example.js";
 import { loadStats } from "./stats.js";
 
 const RESUME_PATH = "./resume.pdf";
-const MAX_RUNS = 10;
+const MAX_RUNS = 143;
 
 const stats = loadStats();
 
