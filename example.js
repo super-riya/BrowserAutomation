@@ -1,3 +1,9 @@
+export const URLs = [
+    "https://career.zorvyn.io/careers/WFRKL9/apply", //SDE
+    "https://career.zorvyn.io/careers/CHHFUL/apply", // Frontend
+    "https://career.zorvyn.io/careers/T0RT7Q/apply", // UI/UX
+];
+
 export const firstNames = [
   "Aarav",
   "Vihaan",
