@@ -1,28 +1,17 @@
 import { chromium } from "playwright";
-import fs from "fs";
 import { firstNames, lastNames, emails, options, URLs } from "./example.js";
-import { loadStats } from "./stats.js";
 
 const RESUME_PATH = "./resume.pdf";
 const MAX_RUNS = 143;
-
-const stats = loadStats();
-
-const ROLE_MAP = {
-  [URLs[0]]: "sde",
-  [URLs[1]]: "frontend",
-  [URLs[2]]: "uiux"
-};
 
 const browser = await chromium.launch({
   headless: true,
   args: ["--no-sandbox", "--disable-setuid-sandbox"]
 });
 
-for (let run = 1; run <= MAX_RUNS; run++) {
+for (let run = 0; run <= MAX_RUNS; run++) {
   const page = await browser.newPage();
-  const URL = URLs[Math.floor(Math.random() * URLs.length)];
-  const role = ROLE_MAP[URL];
+  const URL = URLs[run % URLs.length];
 
   try {
     await page.goto(URL, { waitUntil: "networkidle" });
@@ -58,18 +47,12 @@ for (let run = 1; run <= MAX_RUNS; run++) {
     await page.click("text=Next");
     await page.click("text=Submit Application");
 
-    stats[role].success++;
-
   } catch {
-    stats[role].failed++;
+    console.log("Error occured");
   } finally {
     await page.close();
   }
 }
 
-console.log("FINAL STATS:");
-console.log(JSON.stringify(stats, null, 2));
-// write stats ONCE
-// fs.writeFileSync("stats.json", JSON.stringify(stats, null, 2));
-
+console.log("Career Done");
 await browser.close();
