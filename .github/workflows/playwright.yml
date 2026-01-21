@@ -1,8 +1,5 @@
 name: Playwright Automation
 
-permissions:
-  contents: write
-
 on:
   workflow_dispatch:
   schedule:
@@ -28,7 +25,7 @@ jobs:
           npx playwright install-deps
 
       - name: Run main
-        run: node script.js
+        run: node career.js
 
       - name: Run contact
         run: node contact.js
