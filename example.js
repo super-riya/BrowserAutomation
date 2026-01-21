@@ -2,6 +2,8 @@ export const URLs = [
     "https://career.zorvyn.io/careers/WFRKL9/apply", //SDE
     "https://career.zorvyn.io/careers/CHHFUL/apply", // Frontend
     "https://career.zorvyn.io/careers/T0RT7Q/apply", // UI/UX
+    "https://career.zorvyn.io/careers/1VPLOM/apply", // Associate Software Engineer
+    "https://career.zorvyn.io/careers/86TAI2/apply" //  Product Management Intern
 ];
 
 export const firstNames = [
