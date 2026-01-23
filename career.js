@@ -6,7 +6,6 @@ const MAX_RUNS = 143;
 
 const browser = await chromium.launch({
   headless: true,
-  args: ["--no-sandbox", "--disable-setuid-sandbox"]
 });
 
 for (let run = 0; run <= MAX_RUNS; run++) {
@@ -43,6 +42,29 @@ for (let run = 0; run <= MAX_RUNS; run++) {
     await page.click("text=Next");
     await page.click("text=Next");
     await page.click("text=Next");
+    
+    if (URL === "https://career.zorvyn.io/careers/1VPLOM/apply") {
+      const lngs = [
+        "Java",
+        "C or C++",
+        "Python",
+        "JavaScript",
+        "Other"
+      ]
+      const git = ["Yes", "No"]
+      const attentionToDetail = ["Yes", "No"]
+
+      await page.click(
+        "text=" + lngs[Math.floor(Math.random() * lngs.length)],
+      );
+      await page.click(
+        "text=" + attentionToDetail[Math.floor(Math.random() * attentionToDetail.length)],
+      );
+      await page.click(
+        "text=" + git[Math.floor(Math.random() * git.length)],
+      );
+    }
+    
     await page.click("text=" + options[Math.floor(Math.random() * options.length)]);
     await page.click("text=Next");
     await page.click("text=Submit Application");
