@@ -3,7 +3,7 @@ name: Playwright Automation
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/30 * * * *" # optional: every 6 hours
+    - cron: "*/10 * * * *"
 
 jobs:
   run-automation:
