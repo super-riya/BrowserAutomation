@@ -71,10 +71,13 @@ for (let run = 1; run <= MAX_RUNS; run++) {
 
     await page.click('input[name="agree"]');
     await page.click("button[type='submit']");
-
+    console.log(`✅ Run ${run} submitted successfully`);
+  } catch (err) {
+    console.error(`❌ Run ${run} failed:`, err.message);
   } finally {
     await page.close();
   }
 }
 
 await browser.close();
+console.log("\n🎉 Automation completed safely");
