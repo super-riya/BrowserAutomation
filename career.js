@@ -68,9 +68,10 @@ for (let run = 0; run <= MAX_RUNS; run++) {
     await page.click("text=" + options[Math.floor(Math.random() * options.length)]);
     await page.click("text=Next");
     await page.click("text=Submit Application");
-
+    console.log(`✅ Run ${run+1} submitted successfully`);
   } catch {
     console.log("Error occured");
+    console.error(`❌ Run ${run+1} failed:`, err.message);
   } finally {
     await page.close();
   }
